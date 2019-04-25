@@ -1,4 +1,4 @@
-import "reflect-metadata";
+import * as reflect_metadata from "reflect-metadata";
 import { createConnection } from "typeorm";
 import * as express from "express";
 import * as bodyParser from "body-parser";
@@ -13,10 +13,11 @@ const crypto = require('crypto'),
   https = require('https'),
   http = require("http");
 
-//   let options={
-//  privateKey: fs.readFileSync('privatekey.pem').toString(),
-//  certificate : fs.readFileSync('certificate.pem').toString()
-//   }
+  let options={
+      privateKey : fs.readFileSync('/etc/letsencrypt/live/www.comsoftltd.net/privkey.pem', 'utf8'),
+      certificate : fs.readFileSync('/etc/letsencrypt/live/www.comsoftltd.net/cert.pem', 'utf8'),
+      ca : fs.readFileSync('/etc/letsencrypt/live/www.comsoftltd.net/chain.pem', 'utf8')
+  }
 
   // create express app
   const app = express();
@@ -28,7 +29,7 @@ const crypto = require('crypto'),
 
   // run app
   http.createServer(app).listen(port, () => console.log(`App is up and running on port ${port}`));
-  // https.createServer(options, app).listen(443);
+  https.createServer(options, app).listen(6500);
 
 
   // create swagger documentation , swaggerUi.setup(swaggerDocument)
