@@ -1,5 +1,4 @@
-import * as reflect_metadata from "reflect-metadata";
-import { createConnection } from "typeorm";
+
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as swaggerUi from 'swagger-ui-express'
