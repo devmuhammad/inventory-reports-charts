@@ -42,17 +42,3 @@ const crypto = require('crypto'),
 
 
 // }).catch(error => console.log("TypeORM connection error: ", error));
-
-// {
-//   "type": "mysql",
-//   "host": "comsoftltd.net",
-//   "port": 3307,
-//   "username": "m.olawale",
-//   "password": "cabsol.muhammad2019*",
-//   "database": "cabsolbdc",
-//   "entities": ["src/entities/*.ts"],
-//   "synchronize": true,
-//   "cli": {
-//     "entitiesDir": "src/entities"
-//   }
-// }
